@@ -1,7 +1,30 @@
 ﻿// Задача 21: Напишите программу, которая принимает на вход координаты
 // двух точек и находит расстояние между ними в 3D пространстве.
 
-Console.Clear();
+
+
+static void Resize<T>(ref T[] array, int newSize)
+{
+    T[] newArray = new T[newSize];
+    for (int i = 0; i < array.Length && i < newArray.Length; i++)
+        newArray[i] = array[i];
+    array = newArray;
+}
+
+static void Insert<T>(ref T[] array, T value, int index)
+{
+    T[]newArray = new T [array.Length + 1];
+    
+    newArray[index] = value;
+
+    for (int i = 0; i < index; i++)
+        newArray[i] = array[i];
+    
+    for (int j = index; j < array.Length; j++)
+        newArray[j + 1] = array[j];
+    
+    array = newArray;
+}
 
 string what_coordinate(int coordinate)
 {
@@ -17,13 +40,21 @@ string what_coordinate(int coordinate)
 
 // Вписываем в listCountPoints[listXYZ[0,1,2],listXYZ[3,0,1]] // Двухмерный массив
 
-double[] listXYZ, listCountPoints;
+double[] listXYZ = {0};
+double[] listCountPoints = {0};
+
 int countCoordinats = 3; // defaunt = 3
 int countPoints = 1;     // defaunt = 2
 
-listXYZ = new double[countCoordinats];     // Колличество Координат
-listCountPoints = new double[countPoints]; // Колличество Точек
 
+Resize(ref listXYZ, countCoordinats); // Колличество Координат
+Resize(ref listCountPoints, countPoints); // Колличество Точек
+
+
+// listXYZ = new double[countCoordinats];     // Колличество Координат
+// listCountPoints = new double[countPoints]; // Колличество Точек
+
+Console.Clear();
 
 for (int iCountPoint=0; iCountPoint<countPoints; iCountPoint++)      // Колличество точек     = iCountPoint
 {
@@ -33,7 +64,9 @@ for (int iCountPoint=0; iCountPoint<countPoints; iCountPoint++)      // Колл
         Console.Write($"Введите координату {what_coordinate(coordinate:jCountCoor)} для точки Point{iCountPoint+1}: ");
         listXYZ[jCountCoor] = Convert.ToDouble(Console.ReadLine());
 
-        // listCountPoints[iCountPoint][jCountCoor] = listXYZ[0];
+
+        // Insert(ref listCountPoints[iCountPoint], listXYZ[jCountCoor], jCountCoor);
+        // listCountPoints[iCountPoint][jCountCoor] = listXYZ[jCountCoor];
     };
     
 };
