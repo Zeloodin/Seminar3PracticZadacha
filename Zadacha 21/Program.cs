@@ -26,7 +26,7 @@ static void Insert<T>(ref T[] array, T value, int index)
     array = newArray;
 }
 
-string what_coordinate(int coordinate)
+string what_coordinate(int coordinate) // Координаты X=1 Y=2 Z=3 4......N
 {
     switch(coordinate)
     {
@@ -51,29 +51,58 @@ Resize(ref listXYZ, countCoordinats); // Колличество Координа
 Resize(ref listCountPoints, countPoints); // Колличество Точек
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // listXYZ = new double[countCoordinats];     // Колличество Координат
 // listCountPoints = new double[countPoints]; // Колличество Точек
 
-Console.Clear();
-
-for (int iCountPoint=0; iCountPoint<countPoints; iCountPoint++)      // Колличество точек     = iCountPoint
-{
-    for (int jCountCoor=0; jCountCoor<countCoordinats; jCountCoor++) // Колличество координат = jCountCoor
-    {
-
-        Console.Write($"Введите координату {what_coordinate(coordinate:jCountCoor)} для точки Point{iCountPoint+1}: ");
-        listXYZ[jCountCoor] = Convert.ToDouble(Console.ReadLine());
 
 
-        // Insert(ref listCountPoints[iCountPoint], listXYZ[jCountCoor], jCountCoor);
-        // listCountPoints[iCountPoint][jCountCoor] = listXYZ[jCountCoor];
-    };
+
+
+
+
+
+
+// Console.Clear();
+
+// for (int iCountPoint=0; iCountPoint<countPoints; iCountPoint++)      // Колличество точек     = iCountPoint
+// {
+//     for (int jCountCoor=0; jCountCoor<countCoordinats; jCountCoor++) // Колличество координат = jCountCoor
+//     {
+
+//         Console.Write($"Введите координату {what_coordinate(coordinate:jCountCoor)} для точки Point{iCountPoint+1}: ");
+//         listXYZ[jCountCoor] = Convert.ToDouble(Console.ReadLine());
+
+
+//         // Insert(ref listCountPoints[iCountPoint], listXYZ[jCountCoor], jCountCoor);
+//         // listCountPoints[iCountPoint, jCountCoor] = listXYZ[jCountCoor];
+//     };
     
-};
+// };
 
 
-Console.WriteLine($"{listXYZ[0]} {listXYZ[1]} {listXYZ[2]}");
-Console.WriteLine($"{listCountPoints}");
+// Console.WriteLine($"{listXYZ[0]} {listXYZ[1]} {listXYZ[2]}");
+// Console.WriteLine($"{listCountPoints}");
+
+
+
+
+
+
+
 
 
 
