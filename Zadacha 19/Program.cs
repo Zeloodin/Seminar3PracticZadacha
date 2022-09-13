@@ -6,17 +6,22 @@ bool IsNumberPalindrom(int number)
     int numberPalindrom = number;
     int lenghtNumber = Find_the_lenght_of_an_integer(numberPalindrom);
     string numberPalindromString = Convert.ToString(numberPalindrom);
-    for (int i = 2; i > 0; i--)
+    bool isBoolPalindrom = true;
+    for (int i = 1; i >= 0; i--)
     {
-        if(numberPalindromString[i] == numberPalindromString[lenghtNumber-i]) // Проверяет первые два числа на палиндром
+        // Console.WriteLine($"{numberPalindromString[i]} == {numberPalindromString[lenghtNumber-i-1]}");
+        if(numberPalindromString[i] == numberPalindromString[lenghtNumber-i-1]) // Проверяет первые два числа на палиндром
         {
-            return false;
+            continue;
+        }
+        else
+        {
+            isBoolPalindrom = false;
+            return isBoolPalindrom;
         }
     }
-    return true;
+    return isBoolPalindrom;
 }
-
-Console.WriteLine(IsNumberPalindrom(12321));
 
 int Terminal_input_out_integer(string input_string)
 {
