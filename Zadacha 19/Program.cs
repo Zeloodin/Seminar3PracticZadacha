@@ -7,12 +7,11 @@ bool IsNumberPalindrom(int number)
     int lenghtNumber = Find_the_lenght_of_an_integer(numberPalindrom);
     string numberPalindromString = Convert.ToString(numberPalindrom);
     bool isBoolPalindrom = true;
-    for (int i = 1; i >= 0; i--)
+    for (int i = 0; i < lenghtNumber / 2; i++)
     {
         // Console.WriteLine($"{numberPalindromString[i]} == {numberPalindromString[lenghtNumber-i-1]}");
         if(numberPalindromString[i] == numberPalindromString[lenghtNumber-i-1]) // Проверяет первые два числа на палиндром
         {
-            continue;
         }
         else
         {
